@@ -3,9 +3,9 @@ from django.db import models
 # Create your models here.
 
 
-class Projects(models.Model):
+class Project(models.Model):
     class Meta(object):
-        db_table = 'projects'
+        db_table = 'project'
 
     projectheading = models.CharField(
         'Project-Heading', max_length=100, default="PROJECT-HEADING", blank=False, null=False

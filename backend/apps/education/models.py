@@ -10,6 +10,12 @@ class Education(models.Model):
     eduheading = models.CharField(
         "Education-Heading", max_length=100, blank=False, null=False, default='Eduction-Heading'
     )
-    edudescription = models.CharField(
-        'Educaiton-description', max_length=255, blank=False, null=False, default='Education-Description'
+    edudescription1 = models.CharField(
+        'Educaiton-description1', max_length=255, blank=False, null=False, default='Education-Description'
+    )
+    edudescription2 = models.CharField(
+        "Education-Description2", max_length=255, blank=True, null=True
+    )
+    edudescription3 = models.CharField(
+        "Education-Description3", max_length=255, blank=True, null=True
     )

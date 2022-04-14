@@ -31,6 +31,3 @@ class Header(models.Model):
     email = models.EmailField(
         'Email', max_length=255, null=False, blank=False, db_index=True, default='Email'
     )
-
-    def __str__(self):
-        return self.name

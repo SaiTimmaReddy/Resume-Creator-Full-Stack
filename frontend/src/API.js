@@ -32,37 +32,37 @@ api.interceptors.request.use(
 );
 
 export default class API {
-    getPosts = params => {
-        return api
-            .get('/posts/', { params })
-            .then(response => {
-                return response.data;
-            })
-            .catch(error => {
-                throw new Error(error);
-            });
-    };
-    addPost = postBody => {
-        const formData = new FormData();
+    // getPosts = params => {
+    //     return api
+    //         .get('/posts/', { params })
+    //         .then(response => {
+    //             return response.data;
+    //         })
+    //         .catch(error => {
+    //             throw new Error(error);
+    //         });
+    // };
+    // addPost = postBody => {
+    //     const formData = new FormData();
 
-        for (const key in postBody) {
-            formData.append(key, postBody[key]);
-        }
+    //     for (const key in postBody) {
+    //         formData.append(key, postBody[key]);
+    //     }
 
-        return api
-            .post('/posts/add/', formData)
-            .then(response => {
-                return response.data;
-            })
-            .catch(error => {
-                throw new Error(error);
-            });
-    };
-    deletePost = id => {
-        return api.delete(`/posts/delete/${id}/`).catch(error => {
-            throw new Error(error);
-        });
-    };
+    //     return api
+    //         .post('/posts/add/', formData)
+    //         .then(response => {
+    //             return response.data;
+    //         })
+    //         .catch(error => {
+    //             throw new Error(error);
+    //         });
+    // };
+    // deletePost = id => {
+    //     return api.delete(`/posts/delete/${id}/`).catch(error => {
+    //         throw new Error(error);
+    //     });
+    // };
 
     /*****************************************
      * API FOR THE EDUCATION COMPONENT
@@ -70,7 +70,7 @@ export default class API {
 
     getEducation = async () => {
         let url = '/education/';
-        const items = await api
+        const education = await api
             .get(url)
             .then(response => {
                 return response.data;
@@ -78,7 +78,7 @@ export default class API {
             .catch(error => {
                 throw new Error(error);
             });
-        return items;
+        return education;
     };
 
     /*****************************************
@@ -87,7 +87,7 @@ export default class API {
 
     getHeader = async () => {
         let url = '/header/';
-        const items = await api
+        const header = await api
             .get(url)
             .then(response => {
                 return response.data;
@@ -95,7 +95,7 @@ export default class API {
             .catch(error => {
                 throw new Error(error);
             });
-        return items;
+        return header;
     };
 
     /*****************************************
@@ -103,7 +103,7 @@ export default class API {
      * ******************************************************* */
     getProjects = async () => {
         let url = '/projects/';
-        const items = await api
+        const projects = await api
             .get(url)
             .then(response => {
                 return response.data;
@@ -111,7 +111,7 @@ export default class API {
             .catch(error => {
                 throw new Error(error);
             });
-        return items;
+        return projects;
     };
     /*****************************************
      * API FOR THE SKILLS COMPONENT
@@ -119,7 +119,7 @@ export default class API {
 
     getSkills = async () => {
         let url = '/skills/';
-        const items = await api
+        const skills = await api
             .get(url)
             .then(response => {
                 return response.data;
@@ -127,7 +127,7 @@ export default class API {
             .catch(error => {
                 throw new Error(error);
             });
-        return items;
+        return skills;
     };
 
     /*****************************************
@@ -136,7 +136,7 @@ export default class API {
 
     getWorkExperience = async () => {
         let url = '/workexperience/';
-        const items = await api
+        const experience = await api
             .get(url)
             .then(response => {
                 return response.data;
@@ -144,6 +144,6 @@ export default class API {
             .catch(error => {
                 throw new Error(error);
             });
-        return items;
+        return experience;
     };
 }

@@ -1,17 +1,17 @@
 import API from '../../API';
-import { fetchEducationAction } from './actions';
+import { fetchHeaderAction } from './actions';
 
 const api = new API();
 
-export const fetchEducation = () => {
+export const fetchHeader = () => {
     return async dispatch => {
         return api
-            .getEducation()
-            .then(education => {
-                dispatch(fetchEducationAction(education));
+            .getHeader()
+            .then(header => {
+                dispatch(fetchHeaderAction(header));
             })
             .catch(error => {
-                alert('Failed to connect API: /education details/');
+                alert('Failed to connect API: /Headingdetails/');
             });
     };
 };

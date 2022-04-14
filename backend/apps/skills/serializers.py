@@ -1,8 +1,8 @@
 from rest_framework import serializers
-from .models import Skills
+from .models import Skill
 
 
-class SkillsSerializer(serializers.ModelSerializer):
+class SkillSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Skills
+        model = Skill
         fields = '__all__'

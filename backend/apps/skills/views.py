@@ -1,10 +1,14 @@
 from django.shortcuts import render
-from .serializers import SkillsSerializer
+from .serializers import SkillSerializer
 from rest_framework import generics
-from .models import Skills
+from .models import Skill
 # Create your views here.
+from rest_framework.response import Response
 
 
-class SkillsDetails(generics.ListAPIView):
-    queryset = Skills.objects.all()
-    serializer_class = SkillsSerializer
+class SkillDetails(generics.ListAPIView):
+    queryset = Skill.objects.all()
+    serializer_class = SkillSerializer
+
+    def get_paginated_response(self, data):
+        return Response(data)

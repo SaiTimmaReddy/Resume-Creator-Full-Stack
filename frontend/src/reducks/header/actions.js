@@ -1,7 +1,7 @@
-export const FETCH_EDUCATION = 'FETCH_EDUCATION';
-export const fetchEducationAction = education => {
+export const FETCH_HEADER = 'FETCH_HEADER';
+export const fetchHeaderAction = header => {
     return {
-        type: 'FETCH_EDUCATION',
-        payload: education
+        type: 'FETCH_HEADER',
+        payload: header
     };
 };
